@@ -364,11 +364,20 @@ body.menu_expended .logo path {
 }
 /*attest card*/
 #testemony .cards_container{
-    display: flex;
-    flex-direction: column;
-    gap: 3.2rem;
+    position: relative;
+    height: 58.1rem;
+    overflow: hidden;
+}
+#testemony .cards{
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    grid-template-rows: repeat(2, 27.3rem);
+    row-gap: 3.2rem;
 }
 #testemony .card{
+    height: 27.3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -400,7 +409,6 @@ body.menu_expended .logo path {
 }
 /*companies card*/
 #testemony .companies{
-
     margin-top: 10rem;
 }
 #testemony .companies h3{
@@ -722,20 +730,14 @@ footer ul{
         width: 48rem;
     }
     #testemony .cards_container{
-        height: max(27.3rem);
-        flex-direction: row;
-        flex-wrap: nowrap;
-        overflow: auto;
-        scrollbar-width: thin;
-        cursor: grabbing;
+        height: 27.5rem;
     }
-    #testemony .cards_container::-webkit-scrollbar{
-        display: none;
-    }
-    #testemony .card{
-        width: 48.5%;
-        flex-shrink: 0;
-        flex-grow: 1;
+    #testemony .cards{
+        grid-template-columns: repeat(4, 52.5rem);
+        grid-template-rows: none;
+        row-gap: 0;
+        column-gap: 3.2rem;
+        pointer-events: none;
     }
     #testemony .dots{
         display: block;
@@ -750,7 +752,6 @@ footer ul{
         fill: var(--pc-brand-color);
     }
 
-    #testomony .dots 
     #testemony .companies ul{
         flex-direction: row;
     }
