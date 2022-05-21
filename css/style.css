@@ -1,4 +1,4 @@
-/*general formats*/
+/*=== general formats ==========================================*/
 
 * {
     margin: 0;
@@ -15,7 +15,7 @@
     --pc-brand-beige: hsl(39, 100%, 97%);
     --sc-gray-headline: hsl(105, 100%, 5%);
     --sc-gray-paragraph: hsl(104, 16%, 24%);
-    --sc-white: hsl(0, 0%, 93%);
+    --sc-white: hsl(0, 0%, 100%);
 
     --nav-height: 7.2rem;
 
@@ -106,7 +106,7 @@ section header p{
     background-color: var(--pc-brand-color-hover);
 }
 
-/*header formats*/
+/*=== header formats ==========================================*/
 
 #home {
     padding-top: calc(4.1rem + var(--nav-height));
@@ -187,7 +187,7 @@ section header p{
     margin-bottom: 0;
 }
 
-/*navigation formats*/
+/*=== navigation formats ==========================================*/
 #navigation {
     width: 100vw;
     display: flex;
@@ -223,7 +223,7 @@ body.menu_expended #navigation .logo path,
     cursor: pointer;
 }
 
-/*dropdown menu navigation formats*/
+/*=== dropdown menu formats ==========================================*/
 
 body.menu_expended {
     overflow: hidden;
@@ -312,7 +312,7 @@ body.menu_expended .logo path {
     justify-content: center;
 }
 
-/*services formats*/
+/*=== services formats ==========================================*/
 #services header h4 {
     font-weight: 700;
     font-size: 1.4rem;
@@ -352,7 +352,67 @@ body.menu_expended .logo path {
     color: var(--sc-gray-paragraph);
 }
 
-/*about formats*/
+/*=== attest formats ==========================================*/
+#testemony{
+    background-color: white;
+}
+#testemony header h4{
+    text-transform: uppercase;
+}
+#testemony header h2{
+    margin: 1.6rem auto 6rem auto;
+}
+/*attest card*/
+#testemony .cards_container{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+#testemony .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 3.2rem;
+    gap: 2rem;
+    background: var(--pc-brand-beige);
+    border-radius: 0.4rem;
+} 
+#testemony .card .testemony_user{
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+#testemony .testemony_user img{
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 100%;
+}
+#testemony .testemony_user p{
+    line-height: 2.8rem;
+    font-weight: 700;
+    color: var(--pc-brand-color);
+}
+/*dots*/
+#testemony .dots{
+    display: none;
+}
+/*companies card*/
+#testemony .companies{
+
+    margin-top: 10rem;
+}
+#testemony .companies h3{
+    margin-bottom: 4.8rem;
+}
+#testemony .companies ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9rem;
+}
+/*=== about formats ==========================================*/
 #about{
     background: var(--pc-brand-beige);
     text-align: left;
@@ -367,8 +427,9 @@ body.menu_expended .logo path {
     margin: 1.6rem auto 6rem auto;
 }
 
-/*contact formats*/
+/*=== contact formats ==========================================*/
 #contact{
+    background-color: var(--sc-white);
     text-align: left;
 }
 
@@ -393,7 +454,7 @@ body.menu_expended .logo path {
     margin-inline: 0;
 }
 
-/*footer formats*/
+/*=== footer formats ==========================================*/
 footer{
     text-align: left;
     background-color: var(--pc-brand-color);
@@ -429,7 +490,7 @@ footer ul{
     margin: 3.2rem 0rem 6rem 0rem;
 }
 
-/*back to top buttom*/
+/*=== back to top button ==========================================*/
 .btn_back_to_top{
     position: fixed;
     bottom: 1rem;
@@ -444,8 +505,7 @@ footer ul{
     transform: translateX(0%);
 }
 
-/*custom colors */
-
+/*=== custom colors ==========================================*/
 #services .cards circle{
     fill: var(--pc-brand-color-light);
 }
@@ -471,7 +531,6 @@ footer ul{
 }
 
 /*=== media querys ==========================================*/
-
 @media(min-width: 1024px){
 
     /*=== general =============================================*/
@@ -657,6 +716,43 @@ footer ul{
     #services .cards{
         width: 30%;
         flex-grow: 1s;
+    }
+    /*=== testemony =============================================*/
+    #testemony h2{
+        width: 48rem;
+    }
+    #testemony .cards_container{
+        height: max(27.3rem);
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: auto;
+        scrollbar-width: thin;
+        cursor: grabbing;
+    }
+    #testemony .cards_container::-webkit-scrollbar{
+        display: none;
+    }
+    #testemony .card{
+        width: 48.5%;
+        flex-shrink: 0;
+        flex-grow: 1;
+    }
+    #testemony .dots{
+        display: block;
+        margin-top: 4.9rem;
+    }
+    #testemony .dots circle{
+        fill: var(--pc-brand-color-light);
+    }
+    #testemony .dots.page_01 circle:nth-child(1),
+    #testemony .dots.page_02 circle:nth-child(2),
+    #testemony .dots.page_03 circle:nth-child(3){
+        fill: var(--pc-brand-color);
+    }
+
+    #testomony .dots 
+    #testemony .companies ul{
+        flex-direction: row;
     }
     /*=== about =============================================*/
     #about .wrapper{

@@ -1,3 +1,10 @@
+window.addEventListener('load', add_event_after_load)
+
+function add_event_after_load(){
+    let element= document.getElementById("testemony_slide")
+    element.addEventListener('scroll', testemony_slider)
+}
+
 window.addEventListener('scroll', on_scroll)
 
 function on_scroll(){
@@ -6,7 +13,7 @@ function on_scroll(){
     active_menu_on_scroll("home")
     active_menu_on_scroll("services")
     active_menu_on_scroll("about")
-
+    active_menu_on_scroll("testemony")
 }
 
 function active_menu_on_scroll(id){
@@ -36,6 +43,28 @@ function show_back_to_top_on_scroll(){
         document.getElementById("back_to_top").classList.add("btn_back_to_top_show")
     }else  {
         document.getElementById("back_to_top").classList.remove("btn_back_to_top_show")
+    }
+}
+
+function testemony_slider(){
+    show_testemony_page_on_slide()
+}
+
+function show_testemony_page_on_slide(){
+    const scroll_pos= document.getElementById("testemony_slide").scrollLeft
+    const sectionInit= document.getElementById("testemony_slide").offsetLeft
+    const sectionWidth= document.getElementById("testemony_slide").offsetWidth
+
+    const pagewidth= (sectionInit + sectionWidth)/3
+
+    document.querySelector(`.dots`).classList.remove("page_01","page_02","page_03")
+
+    if(scroll_pos <= pagewidth){
+        document.querySelector(`.dots`).classList.add("page_01")
+    }else if(scroll_pos <= pagewidth*2){
+        document.querySelector(`.dots`).classList.add("page_02")
+    }else if(scroll_pos <= pagewidth*3){
+        document.querySelector(`.dots`).classList.add("page_03")
     }
 }
 
